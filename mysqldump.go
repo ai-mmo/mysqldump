@@ -4,13 +4,12 @@ import (
 	"bufio"
 	"database/sql"
 	"fmt"
+	_ "github.com/go-sql-driver/mysql"
 	"io"
 	"log"
 	"os"
 	"strings"
 	"time"
-
-	_ "github.com/go-sql-driver/mysql"
 )
 
 func init() {
@@ -21,14 +20,12 @@ func init() {
 type dumpOption struct {
 	// 导出表数据
 	isData bool
-
 	// 导出指定表, 与 isAllTables 互斥, isAllTables 优先级高
 	tables []string
 	// 导出全部表
 	isAllTable bool
 	// 是否删除表
 	isDropTable bool
-
 	// writer 默认为 os.Stdout
 	writer io.Writer
 }
@@ -166,13 +163,11 @@ func Dump(dsn string, opts ...DumpOption) error {
 	}
 
 	// 导出每个表的结构和数据
-
 	_, _ = buf.WriteString("-- ----------------------------\n")
 	_, _ = buf.WriteString("-- Dumped by mysqldump\n")
 	_, _ = buf.WriteString("-- Cost Time: " + time.Since(start).String() + "\n")
 	_, _ = buf.WriteString("-- ----------------------------\n")
 	buf.Flush()
-
 	return nil
 }
 
