@@ -22,6 +22,8 @@ type dumpOption struct {
 	isData bool
 	// 导出指定表, 与 isAllTables 互斥, isAllTables 优先级高
 	tables []string
+	// 排除指定表, 与 tables 互斥, tables 优先级高
+	ignoreTables []string
 	// 导出全部表
 	isAllTable bool
 	// 是否删除表
@@ -32,35 +34,42 @@ type dumpOption struct {
 
 type DumpOption func(*dumpOption)
 
-// 删除表
+// WithDropTable 删除表
 func WithDropTable() DumpOption {
 	return func(option *dumpOption) {
 		option.isDropTable = true
 	}
 }
 
-// 导出表数据
+// WithData 导出表数据
 func WithData() DumpOption {
 	return func(option *dumpOption) {
 		option.isData = true
 	}
 }
 
-// 导出指定表, 与 WithAllTables 互斥, WithAllTables 优先级高
+// WithIgnoreTables 排除指定表, 与 WithTables 互斥, WithTables 优先级高
+func WithIgnoreTables(tables ...string) DumpOption {
+	return func(option *dumpOption) {
+		option.ignoreTables = tables
+	}
+}
+
+// WithTables 导出指定表, 与 WithAllTables 互斥, WithAllTables 优先级高
 func WithTables(tables ...string) DumpOption {
 	return func(option *dumpOption) {
 		option.tables = tables
 	}
 }
 
-// 导出全部表
+// WithAllTable 导出全部表
 func WithAllTable() DumpOption {
 	return func(option *dumpOption) {
 		option.isAllTable = true
 	}
 }
 
-// 导出到指定 writer
+// WithWriter 导出到指定 writer
 func WithWriter(writer io.Writer) DumpOption {
 	return func(option *dumpOption) {
 		option.writer = writer
@@ -133,7 +142,22 @@ func Dump(dsn string, opts ...DumpOption) error {
 			log.Printf("[error] %v \n", err)
 			return err
 		}
-		tables = tmp
+		// 排除指定表
+		if len(o.ignoreTables) > 0 {
+			bMap := make(map[string]bool)
+			for _, elementB := range o.ignoreTables {
+				bMap[elementB] = true
+			}
+			var result []string
+			for _, elementA := range tmp {
+				if !bMap[elementA] {
+					result = append(result, elementA)
+				}
+			}
+			tables = result
+		} else {
+			tables = tmp
+		}
 	} else {
 		tables = o.tables
 	}
