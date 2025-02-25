@@ -175,7 +175,7 @@ func Source(dsn string, reader io.Reader, opts ...SourceOption) error {
 
 		_, err = dbWrapper.Exec(ssql)
 		if err != nil {
-			log.Printf("[error] %v\n", err)
+			log.Printf("[error] %s %v\n", ssql, err)
 			return err
 		}
 	}
