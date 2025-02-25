@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="973bd51d-fa2a-49f7-a2a1-f32425e470bd" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/example/dump/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/example/dump/dump.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/dump/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/dump/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/source/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/example/source/dump.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/source/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/source/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysqldump.go" beforeDir="false" afterPath="$PROJECT_DIR$/mysqldump.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source.go" beforeDir="false" afterPath="$PROJECT_DIR$/source.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" url="file:///opt/homebrew/opt/go/libexec" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2sf6KzmfL3kLIjiENj9yWkEs9H6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Go 构建.dump.executor": "Run",
+    "Go 构建.go build github.com/ai-mmo/mysqldump/example/dump.executor": "Run",
+    "Go 构建.go build main.go (1).executor": "Run",
+    "Go 构建.go build main.go.executor": "Run",
+    "Go 构建.source.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "master",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/Users/wll/workspace-golang/mysqldump",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true"
+  }
+}]]></component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="GoApplicationRunConfiguration" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Go 构建.source">
+    <configuration name="dump" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <module name="mysqldump" />
+      <working_directory value="$PROJECT_DIR$/example/dump" />
+      <kind value="FILE" />
+      <package value="github.com/ai-mmo/mysqldump" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/example/dump/main.go" />
+      <output_directory value="$PROJECT_DIR$/example/dump" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="mysqldump" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="github.com/ai-mmo/mysqldump" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/example/source/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="source" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="mysqldump" />
+      <working_directory value="$PROJECT_DIR$/example/source" />
+      <kind value="FILE" />
+      <package value="github.com/ai-mmo/mysqldump" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/example/source/main.go" />
+      <output_directory value="$PROJECT_DIR$/example/source" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Go 构建.source" />
+      <item itemvalue="Go 构建.dump" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go 构建.dump" />
+        <item itemvalue="Go 构建.go build main.go" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-gosdk-d297c17c1fbd-57c114c3cede-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-243.24978.59" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-GO-243.24978.59" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>
