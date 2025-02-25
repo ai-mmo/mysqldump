@@ -18,5 +18,6 @@ func main() {
 		mysqldump.WithData(),         // Option: Dump Data (Default: Only dump table schema)
 		mysqldump.WithTables("test"), // Option: Dump Tables (Default: All tables)
 		mysqldump.WithWriter(f),      // Option: Writer (Default: os.Stdout)
+		mysqldump.WithIgnoreInsertTable(), //
 	)
 }

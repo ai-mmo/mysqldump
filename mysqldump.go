@@ -28,6 +28,8 @@ type dumpOption struct {
 	isAllTable bool
 	// 是否删除表
 	isDropTable bool
+	// 是否如果插入的记录违反了唯一性约束，INSERT IGNORE 会忽略该错误，继续执行后续的插入操作
+	isIgnoreInsert bool
 	// writer 默认为 os.Stdout
 	writer io.Writer
 }
@@ -45,6 +47,13 @@ func WithDropTable() DumpOption {
 func WithData() DumpOption {
 	return func(option *dumpOption) {
 		option.isData = true
+	}
+}
+
+// WithIgnoreInsertTable 如果插入的记录违反了唯一性约束，INSERT IGNORE 会忽略该错误，继续执行后续的插入操作
+func WithIgnoreInsertTable() DumpOption {
+	return func(option *dumpOption) {
+		option.isIgnoreInsert = true
 	}
 }
 
@@ -178,7 +187,7 @@ func Dump(dsn string, opts ...DumpOption) error {
 
 		// 导出表数据
 		if o.isData {
-			err = writeTableData(db, table, buf)
+			err = writeTableData(db, table, buf, o.isIgnoreInsert)
 			if err != nil {
 				log.Printf("[error] %v \n", err)
 				return err
@@ -246,7 +255,7 @@ func writeTableStruct(db *sql.DB, table string, buf *bufio.Writer) error {
 
 // 禁止 golangci-lint 检查
 // nolint: gocyclo
-func writeTableData(db *sql.DB, table string, buf *bufio.Writer) error {
+func writeTableData(db *sql.DB, table string, buf *bufio.Writer, ignoreInsert bool) error {
 
 	// 导出表数据
 	_, _ = buf.WriteString("-- ----------------------------\n")
@@ -289,6 +298,10 @@ func writeTableData(db *sql.DB, table string, buf *bufio.Writer) error {
 
 	for _, row := range values {
 		ssql := "INSERT INTO `" + table + "` VALUES ("
+
+		if ignoreInsert {
+			ssql = "INSERT IGNORE INTO `" + table + "` VALUES ("
+		}
 
 		for i, col := range row {
 			if col == nil {
